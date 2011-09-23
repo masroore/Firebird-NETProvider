@@ -1,1 +1,45 @@
-Firebird .net provider
+FirebirdClient ADO.NET 2.0 Data provider for Firebird
+-----------------------------------------------------
+This patch allows FirebirdSql.Data.FirebirdClient.dll to 
+determine the current CPU architecture (32-bit or 64-bit)
+and load the appropriate Firebird DLL library accordingly.
+
+The following table lists the location of the Firebird 2.5 
+binaries that are needed for privately deploying Firebird 
+within the application folder:
+Location			Contents
+------------------  ----------------------------------------
+%APP_ROOT%\x86\		All the native binaries below are 
+					specific to the x86 installation 
+					and 32-bit platform.
+%APP_ROOT%\amd64\	All the native binaries below are 
+					specific to the amd64 installation 
+					and the 64-bit platform.
+					
+Sample folder structure:
+------------------------
+C:\My Application\FirebirdSql.Data.FirebirdClient.dll
+**  64-bit binaries:  **************************************
+C:\My Application\amd64\aliases.conf
+C:\My Application\amd64\fbembed.dll
+C:\My Application\amd64\firebird.conf
+C:\My Application\amd64\firebird.msg
+C:\My Application\amd64\ib_util.dll
+C:\My Application\amd64\icudt30.dll
+C:\My Application\amd64\icuin30.dll
+C:\My Application\amd64\icuuc30.dll
+C:\My Application\amd64\Microsoft.VC80.CRT.manifest
+C:\My Application\amd64\msvcp80.dll
+C:\My Application\amd64\msvcr80.dll
+**  32-bit binaries:  **************************************
+C:\My Application\x86\aliases.conf
+C:\My Application\x86\fbembed.dll
+C:\My Application\x86\firebird.conf
+C:\My Application\x86\firebird.msg
+C:\My Application\x86\ib_util.dll
+C:\My Application\x86\icudt30.dll
+C:\My Application\x86\icuin30.dll
+C:\My Application\x86\icuuc30.dll
+C:\My Application\x86\Microsoft.VC80.CRT.manifest
+C:\My Application\x86\msvcp80.dll
+C:\My Application\x86\msvcr80.dll
